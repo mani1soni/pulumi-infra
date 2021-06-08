@@ -1,0 +1,3 @@
+name: web-task
+runtime: nodejs
+description: upload index.html to s3 and then deploy lamp with 2 ec2 and load balancer.

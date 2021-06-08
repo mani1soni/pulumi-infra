@@ -1,0 +1,787 @@
+{
+    "version": 3,
+    "deployment": {
+        "manifest": {
+            "time": "2021-06-07T15:45:47.273237+05:30",
+            "magic": "94a8d332c6d4d6a70fc7157286c64b1cac704d59c1ae8de7335dde07862fe21b",
+            "version": "v3.4.0"
+        },
+        "secrets_providers": {
+            "type": "service",
+            "state": {
+                "url": "https://api.pulumi.com",
+                "owner": "manisomanish",
+                "project": "web-task",
+                "stack": "dev"
+            }
+        },
+        "resources": [
+            {
+                "urn": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "custom": false,
+                "type": "pulumi:pulumi:Stack",
+                "outputs": {
+                    "bucketName": "msoni-pulumi-335fba5"
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0",
+                "custom": true,
+                "id": "48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "type": "pulumi:providers:aws",
+                "inputs": {
+                    "region": "us-east-1",
+                    "version": "4.7.0"
+                },
+                "outputs": {
+                    "region": "us-east-1",
+                    "version": "4.7.0"
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:ec2/keyPair:KeyPair::msoni-key",
+                "custom": true,
+                "id": "msoni-key-48417cd",
+                "type": "aws:ec2/keyPair:KeyPair",
+                "inputs": {
+                    "__defaults": [
+                        "keyName"
+                    ],
+                    "keyName": "msoni-key-48417cd",
+                    "publicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+iaLTxQw3AUAqTE8HOiU/3D4hH6lqzyJQY5sj5C3oAHTXJyQaSHDwxGtuvkknFUFFgunOZOVgY3bpCqBRco6AJ78EhSVT9jMO6evS5T0/I1DKxjlbyRYnbxhzoewEX8ZCu05eMBXaU/86W/uzblZ551xrMqfdDCb0FISddxIB94vtsIrigNl1kR6KiBy1AJYzWmpfr4UpZ0cC3Zhfp7+dujrPlO3YWlppzNj66aROnJIeSQeiIM1iQ4OC1O/5Ety2QrJvQxfn7yIIWwdyP/drEHzygO2yQwfDz7Z6eeenb4gLZioxQwX5hNu2qG2x3jP1dM0MTNrdUX2TLPWFkrBd5a5AADvdGqAqcERnxEYU8qLsZdvTgXy5WkIkaqQvogxyKBU5KBWERjQQS0V0r2q1+t+c0siuZvDSzNrsfe7HaCVsDW+zOZIKs6bkhHRF95Lm8358gPyXFlsse4Xqb3ZqYHJICFZ6WX8g8oeYjkFFEs4CjjwWpuIFE0k4onT2YSs= manishsoni@C02FFAWTMD6M-manishsoni"
+                },
+                "outputs": {
+                    "__meta": "{\"schema_version\":\"1\"}",
+                    "arn": "arn:aws:ec2:us-east-1:853973692277:key-pair/msoni-key-48417cd",
+                    "fingerprint": "e5:aa:93:42:1d:46:ca:aa:37:3f:a6:2a:26:62:9f:25",
+                    "id": "msoni-key-48417cd",
+                    "keyName": "msoni-key-48417cd",
+                    "keyPairId": "key-03fb384ce6f971791",
+                    "publicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+iaLTxQw3AUAqTE8HOiU/3D4hH6lqzyJQY5sj5C3oAHTXJyQaSHDwxGtuvkknFUFFgunOZOVgY3bpCqBRco6AJ78EhSVT9jMO6evS5T0/I1DKxjlbyRYnbxhzoewEX8ZCu05eMBXaU/86W/uzblZ551xrMqfdDCb0FISddxIB94vtsIrigNl1kR6KiBy1AJYzWmpfr4UpZ0cC3Zhfp7+dujrPlO3YWlppzNj66aROnJIeSQeiIM1iQ4OC1O/5Ety2QrJvQxfn7yIIWwdyP/drEHzygO2yQwfDz7Z6eeenb4gLZioxQwX5hNu2qG2x3jP1dM0MTNrdUX2TLPWFkrBd5a5AADvdGqAqcERnxEYU8qLsZdvTgXy5WkIkaqQvogxyKBU5KBWERjQQS0V0r2q1+t+c0siuZvDSzNrsfe7HaCVsDW+zOZIKs6bkhHRF95Lm8358gPyXFlsse4Xqb3ZqYHJICFZ6WX8g8oeYjkFFEs4CjjwWpuIFE0k4onT2YSs= manishsoni@C02FFAWTMD6M-manishsoni",
+                    "tags": {},
+                    "tagsAll": {}
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "publicKey": null
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:ec2/vpc:Vpc::msoniVpc",
+                "custom": true,
+                "id": "vpc-0dad1761b6b79fa74",
+                "type": "aws:ec2/vpc:Vpc",
+                "inputs": {
+                    "__defaults": [
+                        "assignGeneratedIpv6CidrBlock",
+                        "enableDnsSupport",
+                        "instanceTenancy"
+                    ],
+                    "assignGeneratedIpv6CidrBlock": false,
+                    "cidrBlock": "172.16.0.0/16",
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": {
+                        "Name": "msoniVpc",
+                        "__defaults": []
+                    }
+                },
+                "outputs": {
+                    "__meta": "{\"schema_version\":\"1\"}",
+                    "arn": "arn:aws:ec2:us-east-1:853973692277:vpc/vpc-0dad1761b6b79fa74",
+                    "assignGeneratedIpv6CidrBlock": false,
+                    "cidrBlock": "172.16.0.0/16",
+                    "defaultNetworkAclId": "acl-0a36081f33e2c99e0",
+                    "defaultRouteTableId": "rtb-0772e7aaf6d5f2dfd",
+                    "defaultSecurityGroupId": "sg-06178b49632fdf013",
+                    "dhcpOptionsId": "dopt-00956455b1342abe4",
+                    "enableClassiclink": false,
+                    "enableClassiclinkDnsSupport": false,
+                    "enableDnsHostnames": false,
+                    "enableDnsSupport": true,
+                    "id": "vpc-0dad1761b6b79fa74",
+                    "instanceTenancy": "default",
+                    "ipv6AssociationId": "",
+                    "ipv6CidrBlock": "",
+                    "mainRouteTableId": "rtb-0772e7aaf6d5f2dfd",
+                    "ownerId": "853973692277",
+                    "tags": {
+                        "Name": "msoniVpc"
+                    },
+                    "tagsAll": {
+                        "Name": "msoniVpc"
+                    }
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "cidrBlock": null,
+                    "tags": null
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:s3/bucket:Bucket::msoni-pulumi",
+                "custom": true,
+                "id": "msoni-pulumi-335fba5",
+                "type": "aws:s3/bucket:Bucket",
+                "inputs": {
+                    "__defaults": [
+                        "bucket",
+                        "forceDestroy"
+                    ],
+                    "acl": "private",
+                    "bucket": "msoni-pulumi-335fba5",
+                    "forceDestroy": false
+                },
+                "outputs": {
+                    "accelerationStatus": "",
+                    "acl": "private",
+                    "arn": "arn:aws:s3:::msoni-pulumi-335fba5",
+                    "bucket": "msoni-pulumi-335fba5",
+                    "bucketDomainName": "msoni-pulumi-335fba5.s3.amazonaws.com",
+                    "bucketRegionalDomainName": "msoni-pulumi-335fba5.s3.amazonaws.com",
+                    "corsRules": [],
+                    "forceDestroy": false,
+                    "grants": [],
+                    "hostedZoneId": "Z3AQBSTGFYJSTF",
+                    "id": "msoni-pulumi-335fba5",
+                    "lifecycleRules": [],
+                    "loggings": [],
+                    "objectLockConfiguration": null,
+                    "region": "us-east-1",
+                    "replicationConfiguration": null,
+                    "requestPayer": "BucketOwner",
+                    "serverSideEncryptionConfiguration": null,
+                    "tags": {},
+                    "tagsAll": {},
+                    "versioning": {
+                        "enabled": false,
+                        "mfaDelete": false
+                    },
+                    "website": null
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "acl": null
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:ec2/internetGateway:InternetGateway::msoni-gw",
+                "custom": true,
+                "id": "igw-0cc170f6fa02183c2",
+                "type": "aws:ec2/internetGateway:InternetGateway",
+                "inputs": {
+                    "__defaults": [],
+                    "tags": {
+                        "Name": "msoni-gw",
+                        "__defaults": []
+                    },
+                    "vpcId": "vpc-0dad1761b6b79fa74"
+                },
+                "outputs": {
+                    "arn": "arn:aws:ec2:us-east-1:853973692277:internet-gateway/igw-0cc170f6fa02183c2",
+                    "id": "igw-0cc170f6fa02183c2",
+                    "ownerId": "853973692277",
+                    "tags": {
+                        "Name": "msoni-gw"
+                    },
+                    "tagsAll": {
+                        "Name": "msoni-gw"
+                    },
+                    "vpcId": "vpc-0dad1761b6b79fa74"
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::web-task::aws:ec2/vpc:Vpc::msoniVpc"
+                ],
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "tags": null,
+                    "vpcId": [
+                        "urn:pulumi:dev::web-task::aws:ec2/vpc:Vpc::msoniVpc"
+                    ]
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:s3/bucketObject:BucketObject::myobject",
+                "custom": true,
+                "id": "index.html",
+                "type": "aws:s3/bucketObject:BucketObject",
+                "inputs": {
+                    "__defaults": [
+                        "acl",
+                        "forceDestroy"
+                    ],
+                    "acl": "private",
+                    "bucket": "msoni-pulumi-335fba5",
+                    "forceDestroy": false,
+                    "key": "index.html",
+                    "source": {
+                        "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                        "hash": "a65ba2f9aeaaadac48cf7043076d681b72f1ecaec6aa43b53a1ae58bedc6867a",
+                        "path": "index.html"
+                    }
+                },
+                "outputs": {
+                    "acl": "private",
+                    "bucket": "msoni-pulumi-335fba5",
+                    "bucketKeyEnabled": false,
+                    "cacheControl": "",
+                    "contentDisposition": "",
+                    "contentEncoding": "",
+                    "contentLanguage": "",
+                    "contentType": "binary/octet-stream",
+                    "etag": "fdacb7c20b9065fcc1d3c5ae350a31f7",
+                    "forceDestroy": false,
+                    "id": "index.html",
+                    "key": "index.html",
+                    "metadata": {},
+                    "objectLockLegalHoldStatus": "",
+                    "objectLockMode": "",
+                    "objectLockRetainUntilDate": "",
+                    "serverSideEncryption": "",
+                    "source": {
+                        "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                        "hash": "a65ba2f9aeaaadac48cf7043076d681b72f1ecaec6aa43b53a1ae58bedc6867a",
+                        "path": "index.html"
+                    },
+                    "storageClass": "STANDARD",
+                    "tags": {},
+                    "tagsAll": {},
+                    "versionId": "",
+                    "websiteRedirect": ""
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::web-task::aws:s3/bucket:Bucket::msoni-pulumi"
+                ],
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "bucket": [
+                        "urn:pulumi:dev::web-task::aws:s3/bucket:Bucket::msoni-pulumi"
+                    ],
+                    "key": null,
+                    "source": null
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:ec2/securityGroup:SecurityGroup::web-sg",
+                "custom": true,
+                "id": "sg-0394938ca6db0a0a6",
+                "type": "aws:ec2/securityGroup:SecurityGroup",
+                "inputs": {
+                    "__defaults": [
+                        "name",
+                        "revokeRulesOnDelete"
+                    ],
+                    "description": "Managed by Pulumi",
+                    "ingress": [
+                        {
+                            "__defaults": [
+                                "self"
+                            ],
+                            "cidrBlocks": [
+                                "0.0.0.0/0"
+                            ],
+                            "fromPort": 80,
+                            "protocol": "tcp",
+                            "self": false,
+                            "toPort": 80
+                        }
+                    ],
+                    "name": "web-sg-2e3d609",
+                    "revokeRulesOnDelete": false,
+                    "vpcId": "vpc-0dad1761b6b79fa74"
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000,\"delete\":900000000000},\"schema_version\":\"1\"}",
+                    "arn": "arn:aws:ec2:us-east-1:853973692277:security-group/sg-0394938ca6db0a0a6",
+                    "description": "Managed by Pulumi",
+                    "egress": [],
+                    "id": "sg-0394938ca6db0a0a6",
+                    "ingress": [
+                        {
+                            "cidrBlocks": [
+                                "0.0.0.0/0"
+                            ],
+                            "description": "",
+                            "fromPort": 80,
+                            "ipv6CidrBlocks": [],
+                            "prefixListIds": [],
+                            "protocol": "tcp",
+                            "securityGroups": [],
+                            "self": false,
+                            "toPort": 80
+                        }
+                    ],
+                    "name": "web-sg-2e3d609",
+                    "namePrefix": "",
+                    "ownerId": "853973692277",
+                    "revokeRulesOnDelete": false,
+                    "tags": {},
+                    "tagsAll": {},
+                    "vpcId": "vpc-0dad1761b6b79fa74"
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::web-task::aws:ec2/vpc:Vpc::msoniVpc"
+                ],
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "description": null,
+                    "ingress": null,
+                    "vpcId": [
+                        "urn:pulumi:dev::web-task::aws:ec2/vpc:Vpc::msoniVpc"
+                    ]
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:ec2/routeTable:RouteTable::msoni-rt",
+                "custom": true,
+                "id": "rtb-08dfeae9a2d22dcb9",
+                "type": "aws:ec2/routeTable:RouteTable",
+                "inputs": {
+                    "__defaults": [],
+                    "routes": [
+                        {
+                            "__defaults": [],
+                            "cidrBlock": "0.0.0.0/0",
+                            "gatewayId": "igw-0cc170f6fa02183c2"
+                        }
+                    ],
+                    "tags": {
+                        "Name": "msoni-rt",
+                        "__defaults": []
+                    },
+                    "vpcId": "vpc-0dad1761b6b79fa74"
+                },
+                "outputs": {
+                    "arn": "arn:aws:ec2:us-east-1:853973692277:route-table/rtb-08dfeae9a2d22dcb9",
+                    "id": "rtb-08dfeae9a2d22dcb9",
+                    "ownerId": "853973692277",
+                    "propagatingVgws": [],
+                    "routes": [
+                        {
+                            "carrierGatewayId": "",
+                            "cidrBlock": "0.0.0.0/0",
+                            "destinationPrefixListId": "",
+                            "egressOnlyGatewayId": "",
+                            "gatewayId": "igw-0cc170f6fa02183c2",
+                            "instanceId": "",
+                            "ipv6CidrBlock": "",
+                            "localGatewayId": "",
+                            "natGatewayId": "",
+                            "networkInterfaceId": "",
+                            "transitGatewayId": "",
+                            "vpcEndpointId": "",
+                            "vpcPeeringConnectionId": ""
+                        }
+                    ],
+                    "tags": {
+                        "Name": "msoni-rt"
+                    },
+                    "tagsAll": {
+                        "Name": "msoni-rt"
+                    },
+                    "vpcId": "vpc-0dad1761b6b79fa74"
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::web-task::aws:ec2/internetGateway:InternetGateway::msoni-gw",
+                    "urn:pulumi:dev::web-task::aws:ec2/vpc:Vpc::msoniVpc"
+                ],
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "routes": [
+                        "urn:pulumi:dev::web-task::aws:ec2/internetGateway:InternetGateway::msoni-gw"
+                    ],
+                    "tags": null,
+                    "vpcId": [
+                        "urn:pulumi:dev::web-task::aws:ec2/vpc:Vpc::msoniVpc"
+                    ]
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:ec2/subnet:Subnet::msoniSubnet1",
+                "custom": true,
+                "id": "subnet-0ed621a2e859f81cb",
+                "type": "aws:ec2/subnet:Subnet",
+                "inputs": {
+                    "__defaults": [
+                        "assignIpv6AddressOnCreation"
+                    ],
+                    "assignIpv6AddressOnCreation": false,
+                    "availabilityZone": "us-east-1a",
+                    "cidrBlock": "172.16.0.0/24",
+                    "mapPublicIpOnLaunch": true,
+                    "tags": {
+                        "Name": "msoniSubnet1",
+                        "__defaults": []
+                    },
+                    "vpcId": "vpc-0dad1761b6b79fa74"
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000,\"delete\":1200000000000},\"schema_version\":\"1\"}",
+                    "arn": "arn:aws:ec2:us-east-1:853973692277:subnet/subnet-0ed621a2e859f81cb",
+                    "assignIpv6AddressOnCreation": false,
+                    "availabilityZone": "us-east-1a",
+                    "availabilityZoneId": "use1-az1",
+                    "cidrBlock": "172.16.0.0/24",
+                    "customerOwnedIpv4Pool": "",
+                    "id": "subnet-0ed621a2e859f81cb",
+                    "ipv6CidrBlock": "",
+                    "ipv6CidrBlockAssociationId": "",
+                    "mapCustomerOwnedIpOnLaunch": false,
+                    "mapPublicIpOnLaunch": true,
+                    "outpostArn": "",
+                    "ownerId": "853973692277",
+                    "tags": {
+                        "Name": "msoniSubnet1"
+                    },
+                    "tagsAll": {
+                        "Name": "msoniSubnet1"
+                    },
+                    "vpcId": "vpc-0dad1761b6b79fa74"
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::web-task::aws:ec2/vpc:Vpc::msoniVpc"
+                ],
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "availabilityZone": null,
+                    "cidrBlock": null,
+                    "mapPublicIpOnLaunch": null,
+                    "tags": null,
+                    "vpcId": [
+                        "urn:pulumi:dev::web-task::aws:ec2/vpc:Vpc::msoniVpc"
+                    ]
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:ec2/subnet:Subnet::msoniSubnet2",
+                "custom": true,
+                "id": "subnet-0d10b3c53a2632f32",
+                "type": "aws:ec2/subnet:Subnet",
+                "inputs": {
+                    "__defaults": [
+                        "assignIpv6AddressOnCreation"
+                    ],
+                    "assignIpv6AddressOnCreation": false,
+                    "availabilityZone": "us-east-1b",
+                    "cidrBlock": "172.16.1.0/24",
+                    "mapPublicIpOnLaunch": true,
+                    "tags": {
+                        "Name": "msoniSubnet2",
+                        "__defaults": []
+                    },
+                    "vpcId": "vpc-0dad1761b6b79fa74"
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000,\"delete\":1200000000000},\"schema_version\":\"1\"}",
+                    "arn": "arn:aws:ec2:us-east-1:853973692277:subnet/subnet-0d10b3c53a2632f32",
+                    "assignIpv6AddressOnCreation": false,
+                    "availabilityZone": "us-east-1b",
+                    "availabilityZoneId": "use1-az2",
+                    "cidrBlock": "172.16.1.0/24",
+                    "customerOwnedIpv4Pool": "",
+                    "id": "subnet-0d10b3c53a2632f32",
+                    "ipv6CidrBlock": "",
+                    "ipv6CidrBlockAssociationId": "",
+                    "mapCustomerOwnedIpOnLaunch": false,
+                    "mapPublicIpOnLaunch": true,
+                    "outpostArn": "",
+                    "ownerId": "853973692277",
+                    "tags": {
+                        "Name": "msoniSubnet2"
+                    },
+                    "tagsAll": {
+                        "Name": "msoniSubnet2"
+                    },
+                    "vpcId": "vpc-0dad1761b6b79fa74"
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::web-task::aws:ec2/vpc:Vpc::msoniVpc"
+                ],
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "availabilityZone": null,
+                    "cidrBlock": null,
+                    "mapPublicIpOnLaunch": null,
+                    "tags": null,
+                    "vpcId": [
+                        "urn:pulumi:dev::web-task::aws:ec2/vpc:Vpc::msoniVpc"
+                    ]
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:ec2/routeTableAssociation:RouteTableAssociation::routeTableAssociation1",
+                "custom": true,
+                "id": "rtbassoc-0612083fd47c6572d",
+                "type": "aws:ec2/routeTableAssociation:RouteTableAssociation",
+                "inputs": {
+                    "__defaults": [],
+                    "routeTableId": "rtb-08dfeae9a2d22dcb9",
+                    "subnetId": "subnet-0ed621a2e859f81cb"
+                },
+                "outputs": {
+                    "id": "rtbassoc-0612083fd47c6572d",
+                    "routeTableId": "rtb-08dfeae9a2d22dcb9",
+                    "subnetId": "subnet-0ed621a2e859f81cb"
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::web-task::aws:ec2/routeTable:RouteTable::msoni-rt",
+                    "urn:pulumi:dev::web-task::aws:ec2/subnet:Subnet::msoniSubnet1"
+                ],
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "routeTableId": [
+                        "urn:pulumi:dev::web-task::aws:ec2/routeTable:RouteTable::msoni-rt"
+                    ],
+                    "subnetId": [
+                        "urn:pulumi:dev::web-task::aws:ec2/subnet:Subnet::msoniSubnet1"
+                    ]
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:ec2/routeTableAssociation:RouteTableAssociation::routeTableAssociation2",
+                "custom": true,
+                "id": "rtbassoc-025d50101765282be",
+                "type": "aws:ec2/routeTableAssociation:RouteTableAssociation",
+                "inputs": {
+                    "__defaults": [],
+                    "routeTableId": "rtb-08dfeae9a2d22dcb9",
+                    "subnetId": "subnet-0d10b3c53a2632f32"
+                },
+                "outputs": {
+                    "id": "rtbassoc-025d50101765282be",
+                    "routeTableId": "rtb-08dfeae9a2d22dcb9",
+                    "subnetId": "subnet-0d10b3c53a2632f32"
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::web-task::aws:ec2/routeTable:RouteTable::msoni-rt",
+                    "urn:pulumi:dev::web-task::aws:ec2/subnet:Subnet::msoniSubnet2"
+                ],
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "routeTableId": [
+                        "urn:pulumi:dev::web-task::aws:ec2/routeTable:RouteTable::msoni-rt"
+                    ],
+                    "subnetId": [
+                        "urn:pulumi:dev::web-task::aws:ec2/subnet:Subnet::msoniSubnet2"
+                    ]
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:ec2/instance:Instance::web1",
+                "custom": true,
+                "id": "i-031fd08b1c8133495",
+                "type": "aws:ec2/instance:Instance",
+                "inputs": {
+                    "__defaults": [
+                        "getPasswordData",
+                        "sourceDestCheck"
+                    ],
+                    "ami": "ami-0747bdcabd34c712a",
+                    "getPasswordData": false,
+                    "iamInstanceProfile": "s3-full-access-role",
+                    "instanceType": "t2.micro",
+                    "keyName": "msoni-key-48417cd",
+                    "sourceDestCheck": true,
+                    "subnetId": "subnet-0ed621a2e859f81cb",
+                    "tags": {
+                        "Name": "msoni-web-1",
+                        "__defaults": []
+                    },
+                    "userData": "#!/bin/bash\nsudo apt update\nsudo apt install apache2 \u0026\u0026 sudo apt install aws-cli \naws s3 cp s3://Calling [toString] on an [Output\u003cT\u003e] is not supported.\n\nTo get the value of an Output\u003cT\u003e as an Output\u003cstring\u003e consider either:\n1: o.apply(v =\u003e `prefix${v}suffix`)\n2: pulumi.interpolate `prefix${v}suffix`\n\nSee https://pulumi.io/help/outputs for more details.\nThis function may throw in a future version of @pulumi/pulumi./index.html .\ncp index.html /var/www/html\nsudo systemctl start apache2",
+                    "vpcSecurityGroupIds": [
+                        "sg-0394938ca6db0a0a6"
+                    ]
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000,\"delete\":1200000000000,\"update\":600000000000},\"schema_version\":\"1\"}",
+                    "ami": "ami-0747bdcabd34c712a",
+                    "ebsBlockDevices": [],
+                    "ephemeralBlockDevices": [],
+                    "getPasswordData": false,
+                    "iamInstanceProfile": "s3-full-access-role",
+                    "id": "i-031fd08b1c8133495",
+                    "instanceType": "t2.micro",
+                    "keyName": "msoni-key-48417cd",
+                    "networkInterfaces": [],
+                    "secondaryPrivateIps": [],
+                    "securityGroups": [],
+                    "sourceDestCheck": true,
+                    "subnetId": "subnet-0ed621a2e859f81cb",
+                    "tags": {
+                        "Name": "msoni-web-1"
+                    },
+                    "tagsAll": {
+                        "Name": "msoni-web-1"
+                    },
+                    "userData": "e6a9eb890c4d43b753eacebb9fb3ff75768ab56b",
+                    "vpcSecurityGroupIds": [
+                        "sg-0394938ca6db0a0a6"
+                    ]
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::web-task::aws:ec2/keyPair:KeyPair::msoni-key",
+                    "urn:pulumi:dev::web-task::aws:ec2/subnet:Subnet::msoniSubnet1",
+                    "urn:pulumi:dev::web-task::aws:ec2/securityGroup:SecurityGroup::web-sg"
+                ],
+                "initErrors": [
+                    "creating urn:pulumi:dev::web-task::aws:ec2/instance:Instance::web1: 1 error occurred:\n\t* Error waiting for instance (i-031fd08b1c8133495) to become ready: Failed to reach target state. Reason: Server.InternalError: Internal error on launch\n\n"
+                ],
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "ami": null,
+                    "iamInstanceProfile": null,
+                    "instanceType": null,
+                    "keyName": [
+                        "urn:pulumi:dev::web-task::aws:ec2/keyPair:KeyPair::msoni-key"
+                    ],
+                    "subnetId": [
+                        "urn:pulumi:dev::web-task::aws:ec2/subnet:Subnet::msoniSubnet1"
+                    ],
+                    "tags": null,
+                    "userData": null,
+                    "vpcSecurityGroupIds": [
+                        "urn:pulumi:dev::web-task::aws:ec2/securityGroup:SecurityGroup::web-sg"
+                    ]
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::web-task::aws:ec2/instance:Instance::web2",
+                "custom": true,
+                "id": "i-0e5bea7cce54cc908",
+                "type": "aws:ec2/instance:Instance",
+                "inputs": {
+                    "__defaults": [
+                        "getPasswordData",
+                        "sourceDestCheck"
+                    ],
+                    "ami": "ami-0747bdcabd34c712a",
+                    "getPasswordData": false,
+                    "iamInstanceProfile": "s3-full-access-role",
+                    "instanceType": "t2.micro",
+                    "keyName": "msoni-key-48417cd",
+                    "sourceDestCheck": true,
+                    "subnetId": "subnet-0ed621a2e859f81cb",
+                    "tags": {
+                        "Name": "msoni-web-2",
+                        "__defaults": []
+                    },
+                    "userData": "#!/bin/bash\nsudo apt update\nsudo apt install apache2 \u0026\u0026 sudo apt install aws-cli \naws s3 cp s3://Calling [toString] on an [Output\u003cT\u003e] is not supported.\n\nTo get the value of an Output\u003cT\u003e as an Output\u003cstring\u003e consider either:\n1: o.apply(v =\u003e `prefix${v}suffix`)\n2: pulumi.interpolate `prefix${v}suffix`\n\nSee https://pulumi.io/help/outputs for more details.\nThis function may throw in a future version of @pulumi/pulumi./index.html .\ncp index.html /var/www/html\nsudo systemctl start apache2",
+                    "vpcSecurityGroupIds": [
+                        "sg-0394938ca6db0a0a6"
+                    ]
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":600000000000,\"delete\":1200000000000,\"update\":600000000000},\"schema_version\":\"1\"}",
+                    "ami": "ami-0747bdcabd34c712a",
+                    "arn": "arn:aws:ec2:us-east-1:853973692277:instance/i-0e5bea7cce54cc908",
+                    "associatePublicIpAddress": true,
+                    "availabilityZone": "us-east-1a",
+                    "capacityReservationSpecification": {
+                        "capacityReservationPreference": "open",
+                        "capacityReservationTarget": null
+                    },
+                    "cpuCoreCount": 1,
+                    "cpuThreadsPerCore": 1,
+                    "creditSpecification": {
+                        "cpuCredits": "standard"
+                    },
+                    "disableApiTermination": false,
+                    "ebsBlockDevices": [],
+                    "ebsOptimized": false,
+                    "enclaveOptions": {
+                        "enabled": false
+                    },
+                    "ephemeralBlockDevices": [],
+                    "getPasswordData": false,
+                    "hibernation": false,
+                    "iamInstanceProfile": "s3-full-access-role",
+                    "id": "i-0e5bea7cce54cc908",
+                    "instanceInitiatedShutdownBehavior": "stop",
+                    "instanceState": "running",
+                    "instanceType": "t2.micro",
+                    "ipv6AddressCount": 0,
+                    "ipv6Addresses": [],
+                    "keyName": "msoni-key-48417cd",
+                    "metadataOptions": {
+                        "httpEndpoint": "enabled",
+                        "httpPutResponseHopLimit": 1,
+                        "httpTokens": "optional"
+                    },
+                    "monitoring": false,
+                    "networkInterfaces": [],
+                    "outpostArn": "",
+                    "passwordData": "",
+                    "placementGroup": "",
+                    "primaryNetworkInterfaceId": "eni-0d940f6dac409a522",
+                    "privateDns": "ip-172-16-0-199.ec2.internal",
+                    "privateIp": "172.16.0.199",
+                    "publicDns": "",
+                    "publicIp": "34.200.240.159",
+                    "rootBlockDevice": {
+                        "deleteOnTermination": true,
+                        "deviceName": "/dev/sda1",
+                        "encrypted": true,
+                        "iops": 100,
+                        "kmsKeyId": "arn:aws:kms:us-east-1:853973692277:key/19008ab6-3d44-4b37-9c2b-bdcc09df76b1",
+                        "tags": {},
+                        "throughput": 0,
+                        "volumeId": "vol-0d18aa723f5323237",
+                        "volumeSize": 8,
+                        "volumeType": "gp2"
+                    },
+                    "secondaryPrivateIps": [],
+                    "securityGroups": [],
+                    "sourceDestCheck": true,
+                    "subnetId": "subnet-0ed621a2e859f81cb",
+                    "tags": {
+                        "Name": "msoni-web-2"
+                    },
+                    "tagsAll": {
+                        "Name": "msoni-web-2"
+                    },
+                    "tenancy": "default",
+                    "userData": "e6a9eb890c4d43b753eacebb9fb3ff75768ab56b",
+                    "vpcSecurityGroupIds": [
+                        "sg-0394938ca6db0a0a6"
+                    ]
+                },
+                "parent": "urn:pulumi:dev::web-task::pulumi:pulumi:Stack::web-task-dev",
+                "dependencies": [
+                    "urn:pulumi:dev::web-task::aws:ec2/keyPair:KeyPair::msoni-key",
+                    "urn:pulumi:dev::web-task::aws:ec2/subnet:Subnet::msoniSubnet1",
+                    "urn:pulumi:dev::web-task::aws:ec2/securityGroup:SecurityGroup::web-sg"
+                ],
+                "provider": "urn:pulumi:dev::web-task::pulumi:providers:aws::default_4_7_0::48d25a8d-1361-44fe-947b-2fc7954b445a",
+                "propertyDependencies": {
+                    "ami": null,
+                    "iamInstanceProfile": null,
+                    "instanceType": null,
+                    "keyName": [
+                        "urn:pulumi:dev::web-task::aws:ec2/keyPair:KeyPair::msoni-key"
+                    ],
+                    "subnetId": [
+                        "urn:pulumi:dev::web-task::aws:ec2/subnet:Subnet::msoniSubnet1"
+                    ],
+                    "tags": null,
+                    "userData": null,
+                    "vpcSecurityGroupIds": [
+                        "urn:pulumi:dev::web-task::aws:ec2/securityGroup:SecurityGroup::web-sg"
+                    ]
+                }
+            }
+        ]
+        
+    }
+}
