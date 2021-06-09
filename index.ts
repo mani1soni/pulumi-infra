@@ -96,13 +96,19 @@ const routeTableAssociation2 = new aws.ec2.RouteTableAssociation("routeTableAsso
 
 
 
-const userData = 
-`#!/bin/bash
+// const userData = 
+// `#!/bin/bash
+// sudo apt update -y
+// sudo apt install -y apache2 && sudo apt install -y awscli 
+// aws s3 cp s3://`+pulumi.interpolate`${bucket.id}`+`/index.html /var/www/html/index.html
+// sudo systemctl start apache2`;
+
+
+const userData = pulumi.interpolate`#!/bin/bash
 sudo apt update -y
 sudo apt install -y apache2 && sudo apt install -y awscli 
-aws s3 cp s3://`+pulumi.interpolate`${bucket.id}`+`/index.html /var/www/html/index.html
+aws s3 cp s3://${bucket.id}/index.html /var/www/html/index.html
 sudo systemctl start apache2`;
-
 
 
 //echo "it works" > /var/www/html/index.html
