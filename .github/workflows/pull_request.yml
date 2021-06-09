@@ -17,7 +17,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
       - name: Install Pulumi CLI
-        uses: pulumi/action-install-pulumi-cli@v3
+        uses: pulumi/action-install-pulumi-cli@v1
       - uses: pulumi/actions@v3
         with:
           command: preview
